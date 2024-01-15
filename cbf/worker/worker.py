@@ -70,6 +70,7 @@ class WorkerCBF:
         def process(self):
             body = self.model_dump()
             body["file"] = gzip.compress(self.file).decode("latin1")
+            body = json.dumps(body)
             return gzip.compress(body.encode("latin1")).decode("latin1")
 
     @classmethod
