@@ -22,7 +22,7 @@ jobs:
       run: docker login -u ${{ secrets.usernameDocker }} -p ${{ secrets.passwordDocker }}
 
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag ${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
+      run: docker build . --file Dockerfile --tag ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
 
     - name: Publish Image
-      run: docker push ${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
+      run: docker push ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
