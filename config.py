@@ -11,9 +11,17 @@ class RabbitMQ(BaseModel):
     PASSWORD: str
 
 
+class DemoColeta(BaseModel):
+    serie: str
+    ano: int
+    inicio: int = 1
+    fim: int = 1
+
+
 class Config(TypeEnv):
     RABBITMQ: RabbitMQ
     QTD_CONSUMERS: int
+    DEMO: DemoColeta = None
 
 
 config = Config.load_env(
