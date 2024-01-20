@@ -1,31 +1,7 @@
 import os
-from feiticeiro_tec.config.with_dynaconf import TypeEnv
-from pydantic import BaseModel
 
-
-class RabbitMQ(BaseModel):
-    HOST: str
-    PORT: int
-    VIRTUAL_HOST: str
-    USER: str
-    PASSWORD: str
-
-
-class DemoColeta(BaseModel):
-    serie: str
-    ano: int
-    inicio: int = 1
-    fim: int = 1
-
-
-class Config(TypeEnv):
-    RABBITMQ: RabbitMQ
-    QTD_CONSUMERS: int
-    DEMO: DemoColeta = None
-
-
-config = Config.load_env(
-    default="DEFAULT",
-    env=os.environ.get("ENV", "DEV"),
-    settings_files=["settings.yml"],
-)
+RABBITMQ_USERNAME = os.environ["RABBITMQ_USERNAME"]
+RABBITMQ_HOST = os.environ["RABBITMQ_HOST"]
+RABBITMQ_PASSWORD = os.environ["RABBITMQ_PASSWORD"]
+RABBITMQ_PORT = os.environ["RABBITMQ_PORT"]
+RABBITMQ_BROKER = f"pyamqp://{RABBITMQ_USERNAME}:{RABBITMQ_PASSWORD}@{RABBITMQ_HOST}:{RABBITMQ_PORT}//"
