@@ -1,5 +1,5 @@
 from celery import Celery
-from . import CBFSession, CBFExtrat
+from . import CBFSession, CBFExtratV1
 from config import RABBITMQ_BROKER, RESULT_EXPIRES
 from loguru import logger
 import gzip
@@ -46,7 +46,7 @@ def parse(file):
         logger.error("Error ao descomprimir arquivo.", exception=e)
         return
     try:
-        extract = CBFExtrat(False)
+        extract = CBFExtratV1(False)
         text = extract.bytes_pdf_to_text(file_bytes)
     except Exception as e:
         logger.error("Error ao converter arquivo.", exception=e)
