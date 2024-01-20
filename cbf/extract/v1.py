@@ -128,9 +128,10 @@ class CBFExtrat(CBFExtratBase):
         except Exception:
             return
 
-        hora = (
-            datetime.strptime(query[0], "%M:%S").time() if self.datetime else query[0]
-        )
+        if self.datetime:
+            hora = datetime.strptime(query[0], "%M:%S").time()
+        else:
+            hora = query[0]
         tempo = int(query[2])
         time = (query[3].strip(), query[4])
         num_1 = int(query[6])

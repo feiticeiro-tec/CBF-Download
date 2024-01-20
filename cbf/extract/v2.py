@@ -1,5 +1,4 @@
 import re
-from datetime import datetime
 from loguru import logger
 from .. import regex as config
 from .base import CBFExtratBase
