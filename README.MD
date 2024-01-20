@@ -191,3 +191,508 @@ retorno do parse do pdf
     ]
 }
 ```
+
+Extração da versão 2:
+```json
+
+{
+    "times": {
+        "Gr\u00eamio": {
+            "nome": "Gr\u00eamio",
+            "sigla": "RS",
+            "casa": true,
+            "jogadores": [
+                {
+                    "tipo": "Titular",
+                    "posicao": "Goleiro",
+                    "categoria": "Profissional",
+                    "cbf": "175411"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "165322"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "554626"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "303436"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "166603"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "379065"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "180546"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "407776"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "422351"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "317751"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "292942"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Goleiro",
+                    "categoria": "Profissional",
+                    "cbf": "169978"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "137644"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "298485"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "409960"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "150201"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "399284"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "183094"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "391953"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "646612"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "428672"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "402681"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "184307"
+                }
+            ]
+        },
+        "Santos": {
+            "nome": "Santos",
+            "sigla": "SP",
+            "casa": false,
+            "jogadores": [
+                {
+                    "tipo": "Titular",
+                    "posicao": "Goleiro",
+                    "categoria": "Profissional",
+                    "cbf": "177770"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "170272"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "186450"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "646668"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "334559"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "646663"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "295792"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "377476"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "318143"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "373768"
+                },
+                {
+                    "tipo": "Titular",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "331842"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Goleiro",
+                    "categoria": "Profissional",
+                    "cbf": "188398"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "354299"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "320593"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "308980"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "633531"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "553524"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "441648"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "324513"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "633582"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "307979"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "362877"
+                },
+                {
+                    "tipo": "Reserva",
+                    "posicao": "Jogador",
+                    "categoria": "Profissional",
+                    "cbf": "529172"
+                }
+            ]
+        }
+    },
+    "localizacao": {
+        "hora": "11:00",
+        "data": "28/04/2019",
+        "estadio": "Arena do Gr\u00eamio",
+        "cidade": "Porto Alegre"
+    },
+    "arbitros": {
+        "arbitro_principal": {
+            "nome": "Bruno Arleu de Araujo",
+            "categoria": "AB",
+            "regiao": "RJ"
+        },
+        "arbitro_segundo": {
+            "nome": "Rodrigo Figueiredo Henrique Correa",
+            "categoria": "FIFA",
+            "regiao": "RJ"
+        },
+        "arbitro_terceiro": {
+            "nome": "Thiago Henrique Neto Correa Farinha",
+            "categoria": "AB",
+            "regiao": "RJ"
+        },
+        "arbitro_quarto": {
+            "nome": "Alexandre Vargas Tavares de Jesus",
+            "categoria": "AB",
+            "regiao": "RJ"
+        }
+    },
+    "delegado": "Marcos Roberto Caduri de Almeida",
+    "analista": "Jose Mocellin",
+    "mandante_entrada": [
+        {
+            "hora": "10:50",
+            "atraso": 0
+        },
+        {
+            "hora": "12:01",
+            "atraso": 0
+        }
+    ],
+    "visitante_entrada": [
+        {
+            "hora": "10:54",
+            "atraso": 4
+        },
+        {
+            "hora": "12:02",
+            "atraso": 0
+        }
+    ],
+    "tempo_1": [
+        {
+            "hora": "11:02",
+            "atraso": 2
+        },
+        {
+            "hora": "11:50",
+            "acrecimo": 3
+        }
+    ],
+    "tempo_2": [
+        {
+            "hora": "12:05",
+            "atraso": 0
+        },
+        {
+            "hora": "12:54",
+            "acrecimo": 4
+        }
+    ],
+    "placar": [
+        {
+            "Gr\u00eamio": 0,
+            "Santos": 2
+        },
+        {
+            "Gr\u00eamio": 1,
+            "Santos": 2
+        }
+    ],
+    "cartoes_amarelos": [
+        {
+            "hora": "10:00",
+            "tempo": 2,
+            "num": 5,
+            "nome": "Alison Lopes Ferreira",
+            "time": "Santos"
+        },
+        {
+            "hora": "23:00",
+            "tempo": 2,
+            "num": 21,
+            "nome": "Diego Cristiano Evaristo",
+            "time": "Santos"
+        },
+        {
+            "hora": "39:00",
+            "tempo": 2,
+            "num": 28,
+            "nome": "Lucas Verissimo da Silva",
+            "time": "Santos"
+        },
+        {
+            "hora": "03:00",
+            "tempo": 2,
+            "num": 17,
+            "nome": "Derlis Alberto Gonzalez Galeano",
+            "time": "Santos"
+        },
+        {
+            "hora": "07:00",
+            "tempo": 2,
+            "num": 14,
+            "nome": "Matheus Henrique de Souza",
+            "time": "Gr\u00eamio"
+        },
+        {
+            "hora": "33:00",
+            "tempo": 1,
+            "num": 8,
+            "nome": "Maicon Thiago Pereira de Souza",
+            "time": "Gr\u00eamio"
+        },
+        {
+            "hora": "38:00",
+            "tempo": 1,
+            "num": 4,
+            "nome": "Walter Kannemann",
+            "time": "Gr\u00eamio"
+        }
+    ],
+    "cartoes_vemelhos": [],
+    "substituicoes": [
+        {
+            "hora": "45:00",
+            "tempo": "INT",
+            "time": "Santos",
+            "entrada_numero": 5,
+            "entrada_nome": "Alison Lopes Ferreira 4",
+            "saida_numero": 1,
+            "saida_nome": "Jean Mota Oliveira de Sousa"
+        },
+        {
+            "hora": "06:00",
+            "tempo": 2,
+            "time": "Gr\u00eamio",
+            "entrada_numero": 9,
+            "entrada_nome": "Diego Tardelli Martins 2",
+            "saida_numero": 3,
+            "saida_nome": "Alisson Euler de Freitas Cas"
+        },
+        {
+            "hora": "14:00",
+            "tempo": 2,
+            "time": "Gr\u00eamio",
+            "entrada_numero": 7,
+            "entrada_nome": "Luan Guilherme de Jesus Vieira 2",
+            "saida_numero": 1,
+            "saida_nome": "Jean Pyerre Casagrande Silve"
+        },
+        {
+            "hora": "21:00",
+            "tempo": 2,
+            "time": "Santos",
+            "entrada_numero": 17,
+            "entrada_nome": "Derlis Alberto Gonzalez Gale",
+            "saida_numero": 27,
+            "saida_nome": "Eduardo Colcenti Antunes"
+        },
+        {
+            "hora": "28:00",
+            "tempo": 2,
+            "time": "Gr\u00eamio",
+            "entrada_numero": 10,
+            "entrada_nome": "Felipe dos Reis Pereira Vize",
+            "saida_numero": 12,
+            "saida_nome": "Bruno Cortes Barbosa"
+        },
+        {
+            "hora": "36:00",
+            "tempo": 2,
+            "time": "Santos",
+            "entrada_numero": 7,
+            "entrada_nome": "Carlos Andres Sanchez Arcosa 3",
+            "saida_numero": 0,
+            "saida_nome": "Jean Lucas de Souza Oliveira"
+        }
+    ],
+    "gols": [
+        {
+            "hora": "05:00",
+            "tempo": 1,
+            "tipo": "NR",
+            "numero": 27,
+            "nome": "Eduardo Colcenti Antunes",
+            "time": "Santos"
+        },
+        {
+            "hora": "35:00",
+            "tempo": 1,
+            "tipo": "NR",
+            "numero": 36,
+            "nome": "Felipe Jonatan Rocha Andrade",
+            "time": "Santos"
+        }
+    ]
+}
+```
