@@ -1,10 +1,10 @@
 from celery import Celery
 from . import CBFSession, CBFExtratV1, CBFExtratV2
-from config import RABBITMQ_BROKER, RESULT_EXPIRES
+from config import REDIS_URL, RESULT_EXPIRES
 from loguru import logger
 import gzip
 
-app = Celery("cbf", broker=RABBITMQ_BROKER, backend="rpc://")
+app = Celery("cbf", broker=REDIS_URL, backend="rpc://")
 app.conf.update(
     result_expires=RESULT_EXPIRES,  # 1 hour
 )
