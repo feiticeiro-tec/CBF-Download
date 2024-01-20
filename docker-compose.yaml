@@ -5,6 +5,8 @@ services:
     ports:
       - "6379:6379"
     command: redis-server --requirepass guest
+    volumes:
+      - redis_data:/data
 
   worker: 
     build: .
@@ -13,8 +15,13 @@ services:
       - REDIS_PORT=6379
       - REDIS_PASSWORD=guest
       - REDIS_DB=0
+      - RESULT_EXPIRES=60
     volumes:
       - .:/code
     depends_on:
       - redis
     command: celery -A cbf.worker worker --loglevel=INFO
+
+volumes:
+  redis_data:
+    driver: local
