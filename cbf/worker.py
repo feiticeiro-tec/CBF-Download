@@ -6,7 +6,7 @@ from loguru import logger
 app = Celery("cbf", broker=RABBITMQ_BROKER, backend="rpc://")
 
 
-@app.task(name="cbf.download", reply_to="cbf.save", queue="cbf.download")
+@app.task(name="cbf.download")
 def download(serie, ano, partida, reply_to):
     try:
         cbf = CBF()
