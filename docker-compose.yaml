@@ -1,22 +1,27 @@
 version: '3'
 services:
-  rabbitmq:
-    image: rabbitmq:3.13-rc-alpine
+  redis:
+    image: redis:latest
     ports:
-      - "5672:5672"
-    environment:
-      RABBITMQ_DEFAULT_USER: "guest"
-      RABBITMQ_DEFAULT_PASS: "guest"
+      - "6379:6379"
+    command: redis-server --requirepass guest
+    volumes:
+      - redis_data:/data
 
   worker: 
     build: .
     environment:
-      - RABBITMQ_HOST=rabbitmq
-      - RABBITMQ_USERNAME=guest
-      - RABBITMQ_PASSWORD=guest
-      - RABBITMQ_PORT=5672
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - REDIS_PASSWORD=guest
+      - REDIS_DB=0
+      - RESULT_EXPIRES=60
     volumes:
       - .:/code
     depends_on:
-      - rabbitmq
+      - redis
     command: celery -A cbf.worker worker --loglevel=INFO
+
+volumes:
+  redis_data:
+    driver: local
