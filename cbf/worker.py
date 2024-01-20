@@ -75,7 +75,7 @@ def parse_v2(file):
         logger.error("Error ao converter arquivo.", exception=e)
         return
     try:
-        data = extract.get_data(text)
+        data = extract.get_coleta(text)
         logger.success("Dados extraidos com sucesso!")
         return data
     except Exception as e:
