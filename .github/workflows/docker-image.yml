@@ -26,3 +26,9 @@ jobs:
 
     - name: Publish Image
       run: docker push ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
+
+    - name: Tag latest
+      run: docker tag ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:${GITHUB_REF#refs/tags/} ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:latest
+
+    - name: Publish Image
+      run: docker push ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:latest
