@@ -1,40 +1,12 @@
 import re
-import PyPDF2
-from io import BytesIO
 from datetime import datetime
 from loguru import logger
-from requests import Session
-import config
+from .. import regex as config
+from .base import CBFExtratBase
 
 
-class CBFExtrat(Session):
-    def __init__(self, datetime=True) -> None:
-        super().__init__()
-        self.datetime = datetime
-
-    def colect_time(self, row, match, format, time=False):
-        """COLETA O DATETIME DE UMA LINHA"""
-        data = re.search(match, row).group()
-        if self.datetime:
-            value = datetime.strptime(data, format)
-            if time:
-                return value.time()
-            return value
-        else:
-            return data
-
-    def bytes_pdf_to_text(self, pdf_bytes):
-        """CONVERTE O BYTES DE UM PDF EM TEXTO"""
-        reader = PyPDF2.PdfReader(BytesIO(pdf_bytes))
-        number_of_pages = len(reader.pages)
-        text = ""
-        for page_index in range(0, number_of_pages):
-            page = reader.pages[page_index]
-            text += page.extract_text()
-            text += "\n"
-        return text
-
-    def get_name(self, text, local=False):
+class CBFExtrat(CBFExtratBase):
+    def get_person(self, text, local=False):
         """Coleta Generica -> x: y (x/x)"""
         query = config.REGEX_GET_NAME.search(text)
         if local:
@@ -54,7 +26,7 @@ class CBFExtrat(Session):
                 "Quarto Arbitro:",
             )
         ):
-            dados = self.get_name(row, local=True)
+            dados = self.get_person(row, local=True)
             if row.startswith("Arbitro:"):
                 arbitros["Arbitro Principal"] = dados
 
@@ -156,9 +128,10 @@ class CBFExtrat(Session):
         except Exception:
             return
 
-        hora = (
-            datetime.strptime(query[0], "%M:%S").time() if self.datetime else query[0]
-        )
+        if self.datetime:
+            hora = datetime.strptime(query[0], "%M:%S").time()
+        else:
+            hora = query[0]
         tempo = int(query[2])
         time = (query[3].strip(), query[4])
         num_1 = int(query[6])
@@ -231,9 +204,9 @@ class CBFExtrat(Session):
             elif "Arbitro" in row:
                 self.get_arbitros(arbitros, row)
             elif "Delegado" in row:
-                delegado = self.get_name(row)
+                delegado = self.get_person(row)
             elif "Analista" in row:
-                analista = self.get_name(row)
+                analista = self.get_person(row)
             elif "Entrada do mandante:" in row:
                 self.get_tempos(mandante_entrada, row)
             elif "Entrada do visitante:" in row:
