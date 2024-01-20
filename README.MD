@@ -70,6 +70,7 @@ with open(f"{ano}-{serie}-{partida}.pdf", "wb") as f:
 
 ## Parse
 Como usar o serviço de parse de arquivos do CBF.
+> cbf.parse.v2 para usar a versão 2 do parse
 
 ```python
 
