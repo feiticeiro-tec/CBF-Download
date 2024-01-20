@@ -2,8 +2,6 @@ import re
 import PyPDF2
 from io import BytesIO
 from datetime import datetime
-from loguru import logger
-from .. import regex as config
 
 
 class CBFExtratBase:
