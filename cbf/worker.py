@@ -1,8 +1,25 @@
 from celery import Celery
 from . import CBFSession, CBFExtratV1, CBFExtratV2
-from config import REDIS_URL, RESULT_EXPIRES
+from config import (
+    REDIS_URL,
+    RESULT_EXPIRES,
+    REDIS_HOST,
+    REDIS_PORT,
+    REDIS_PASSWORD,
+    REDIS_DB,
+)
 from loguru import logger
 import gzip
+from redis import Redis
+from .utils import string_to_dict, dict_to_string
+
+db = Redis(
+    host=REDIS_HOST,
+    port=REDIS_PORT,
+    password=REDIS_PASSWORD,
+    db=REDIS_DB,
+)
+
 
 app = Celery("cbf", broker=REDIS_URL, backend="rpc://")
 app.conf.update(
@@ -10,8 +27,25 @@ app.conf.update(
 )
 
 
+def get_response_from_serie(serie, ano, partida):
+    data = db.get(f"{ano}-{serie}-{partida}")
+    if data:
+        return string_to_dict(data)
+
+
 @app.task(name="cbf.download")
 def download(serie, ano, partida):
+    response = get_response_from_serie(serie, ano, partida)
+    if response:
+        logger.success(
+            "Arquivo já baixado!",
+            params={
+                "serie": serie,
+                "ano": ano,
+                "partida": partida,
+            },
+        )
+        return response
     try:
         cbf = CBFSession()
         url = cbf.get_url_sumula_external(serie, ano, partida)
@@ -29,12 +63,16 @@ def download(serie, ano, partida):
             "partida": partida,
         },
     )
-    return {
+
+    response = {
         "serie": serie,
         "ano": ano,
         "partida": partida,
         "file": file.decode("latin-1"),
     }
+
+    db.set(f"{ano}-{serie}-{partida}", dict_to_string(response))
+    return response
 
 
 @app.task(name="cbf.parse")
