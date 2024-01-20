@@ -3,7 +3,7 @@ import re
 from requests import Session
 
 
-class CBF(Session):
+class CBFSession(Session):
     URL_BASE = "https://www.cbf.com.br"
     URL_CAMP_BRASILEIRO_SERIE_FORMAT = (
         URL_BASE + "/futebol-brasileiro/competicoes/"
