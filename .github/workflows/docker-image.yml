@@ -1,0 +1,28 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Iniciando Publicação
+      run: echo da tag:${GITHUB_REF#refs/tags/}
+  
+    - name: Login Docker
+      run: docker login -u ${{ secrets.usernameDocker }} -p ${{ secrets.passwordDocker }}
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
+
+    - name: Publish Image
+      run: docker push ${{ secrets.usernameDocker}}/${{ secrets.imageName }}:${GITHUB_REF#refs/tags/}
