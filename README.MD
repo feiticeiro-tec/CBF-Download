@@ -30,10 +30,10 @@ with open('file.pdf', 'wb') as f:
 docker pull feiticeirotec/cbf-download
 
 docker run\
--e RABBITMQ_USERNAME={RABBITMQ_USERNAME}\
--e RABBITMQ_HOST={RABBITMQ_HOST}\
--e RABBITMQ_PASSWORD={RABBITMQ_PASSWORD}\
--e RABBITMQ_PORT={RABBITMQ_PORT}\
+-e REDIS_HOST=redis\
+-e REDIS_PORT=6379\
+-e REDIS_PASSWORD=guest\
+-e REDIS_DB=0\
 feiticeirotec/cbf-download
 ```
 
