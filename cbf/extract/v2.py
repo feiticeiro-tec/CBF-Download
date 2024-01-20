@@ -155,7 +155,7 @@ class CBFExtrat(CBFExtratBase):
             "casa": False,
         }
 
-    def get_substuicoes(self, anchor, row):
+    def get_substituicoes(self, anchor, row):
         """PEGA AS SUBSTITUIÇÕES DO JOGO"""
         is_int = False
         try:
@@ -327,22 +327,22 @@ class CBFExtrat(CBFExtratBase):
             elif cartoes == "Vermelhos":
                 self.get_cartoes(cartoes_vermelho, row, times)
             elif subs:
-                self.get_substuicoes(substituicoes, row)
+                self.get_substituicoes(substituicoes, row)
             elif gol:
                 self.get_gols(gols, row)
         return {
-            "Times": times,
-            "Localizacao": localizacao,
-            "Arbitros": arbitros,
-            "Delegado": delegado,
-            "Analista": analista,
-            "Mandante Entrada": mandante_entrada,
-            "Visitante Entrada": visitante_entrada,
-            "Tempo 1": tempo_1,
-            "Tempo 2": tempo_2,
-            "Placar": placar,
-            "Cartoes Amarelos": cartoes_amarelo,
-            "Cartoes Vemelhos": cartoes_vermelho,
-            "Substituicoes": substituicoes,
-            "Gols": gols,
+            "times": times,
+            "localizacao": localizacao,
+            "arbitros": arbitros,
+            "delegado": delegado,
+            "analista": analista,
+            "mandante_entrada": mandante_entrada,
+            "visitante_entrada": visitante_entrada,
+            "tempo_1": tempo_1,
+            "tempo_2": tempo_2,
+            "placar": placar,
+            "cartoes_amarelos": cartoes_amarelo,
+            "cartoes_vemelhos": cartoes_vermelho,
+            "substituicoes": substituicoes,
+            "gols": gols,
         }
